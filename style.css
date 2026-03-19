@@ -7,7 +7,7 @@
   --neutral-grey-400: hsl(212, 6%, 44%);
   --neutral-white: hsl(0, 0%, 100%);
   --neutral-cyan: hsl(180, 22%, 90%);
-} 
+}
 
 * {
   margin: 0;
@@ -23,6 +23,7 @@ body {
 .features-heading {
   width: 80%;
   margin: 3.5rem auto;
+  text-align: center;
 }
 
 .features-heading h1 {
@@ -42,7 +43,6 @@ body {
   color: var(--neutral-grey-500);
   line-height: 1.4;
   margin-top: 1rem;
-  text-align: center;
 }
 
 .features {
@@ -118,4 +118,52 @@ body {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 48rem) {
+  .features-heading {
+    max-width: 33.75rem;
+    width: 70%;
+  }
+
+  .features-heading h1 {
+    font-size: 2.25rem;
+  }
+
+  .features {
+    margin: 0 auto;
+    max-width: 41.25rem;
+    grid-gap: 2rem;
+    grid-template-areas:
+      "teambuilder teambuilder"
+      "supervisor karma"
+      "calculator calculator";
+  }
+
+  .features .item.supervisor {
+    grid-area: supervisor;
+  }
+
+  .features .item.builder {
+    grid-area: teambuilder;
+  }
+
+  .features .item.karma {
+    grid-area: karma;
+  }
+
+  .features .item.calculator {
+    grid-area: calculator;
+  }
+}
+
+@media (min-width: 70rem) {
+  .features {
+    max-width: 70rem;
+    width: 75%;
+    align-items: center;
+    grid-template-areas:
+      "supervisor teambuilder calculator"
+      "supervisor karma calculator";
+  }
 }
